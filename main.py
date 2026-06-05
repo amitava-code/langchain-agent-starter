@@ -23,4 +23,4 @@ model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 agent = create_agent(model=model, tools=[surfInternet])
 
 response = agent.invoke({"messages": [HumanMessage("Who is the current president of the United States as of today?")]})
-print(response)
+print(response["messages"][-1].text)
